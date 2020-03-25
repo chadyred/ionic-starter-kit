@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  ionic:
+    user: ${USER_ID}
+    build: ./docker
+    volumes:
+      - ./app:/src
+    working_dir: /src
+    ports:
+      - "8101:8100"
