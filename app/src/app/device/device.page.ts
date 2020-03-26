@@ -11,10 +11,10 @@ export class DevicePage {
   constructor(public navCtrl: NavController) {}
 
   goToHome() {
-    this.navCtrl.navigateRoot('/home');
+    this.navCtrl.navigateRoot('/');
   }
 
   onLoadDevice(name: string) {
-    this.navCtrl.navigateForward('/device/' + name);
+    this.navCtrl.navigateForward('/' + name);
   }
 }
