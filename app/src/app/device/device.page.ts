@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-device',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class DevicePage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
+  goToHome() {
+    this.navCtrl.navigateRoot('/home');
+  }
+
+  onLoadDevice(name: string) {
+    this.navCtrl.navigateForward('/device/' + name);
+  }
 }

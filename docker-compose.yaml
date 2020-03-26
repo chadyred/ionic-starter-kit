@@ -1,11 +1,17 @@
 version: '3.4'
 
+x-ionic-base: &ionic-base
+  user: ${USER_ID}
+  build: ./docker
+  volumes:
+    - ./app:/src
+  working_dir: /src
+
 services:
   ionic:
-    user: ${USER_ID}
-    build: ./docker
-    volumes:
-      - ./app:/src
-    working_dir: /src
+    <<: *ionic-base
     ports:
       - "8101:8100"
+
+  ionic-cli:
+    <<: *ionic-base
